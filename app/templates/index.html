@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de Vídeos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Criar Vídeo com Voz e Legendas</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <label for="text">Texto para Vídeo:</label>
+            {{ form.text(size=50) }}
+            <button type="submit">Gerar Vídeo</button>
+        </form>
+        {% if error %}
+       <div class="error">
+        {{ error }}
+       </div>
+       {% endif %}
+
+    </div>
+</body>
+</html>
